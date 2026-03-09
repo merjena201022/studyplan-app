@@ -2,59 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Study Planner 2026</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merjen | Tennis & Code</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <header>
+        <h1>Merjen</h1>
+        <p>15-Year-Old Athlete & Developer</p>
+    </header>
+
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <span style="color: var(--green); font-weight: bold;">👤 User: {{ user }}</span>
-            <a href="/logout" style="color: #d90429; text-decoration: none; font-weight: bold;">Logout →</a>
-        </div>
-
-        <header>
-            <h1>🌿 Study Planner 2026</h1>
-            <p>Organize your goals for a successful year.</p>
-        </header>
-
-        <section class="form-card">
-            <form action="/add" method="POST">
-                <input type="text" name="name" placeholder="Task Title..." required>
-                <input type="text" name="details" placeholder="Notes/Steps...">
-                
-                <div class="row">
-                    <div class="col">
-                        <label>Deadline</label>
-                        <input type="date" name="deadline" value="2026-02-27" required>
-                    </div>
-                    <div class="col">
-                        <label>Priority</label>
-                        <select name="priority">
-                            <option value="High">🔥 High</option>
-                            <option value="Medium">⚡ Medium</option>
-                            <option value="Low">🍃 Low</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" class="main-btn">Add New Task</button>
-            </form>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm Merjen. I am a 15-year-old **tennis player** who loves competitive sports and coding. I'm currently building my technical skills through Python and Web Development projects.</p>
         </section>
 
-        <div class="task-grid">
-            {% for task in tasks %}
-            <div class="task-card {{ 'done' if task.completed }}">
-                <div class="priority-tag {{ task.priority }}">{{ task.priority }}</div>
-                <h3>{{ task.name }}</h3>
-                <p>{{ task.details }}</p>
-                <div class="date">📅 {{ task.deadline }}</div>
-                
-                <div class="actions">
-                    <a href="/check/{{ task.id }}" class="btn check">{{ 'Undo' if task.completed else 'Complete' }}</a>
-                    <a href="/delete/{{ task.id }}" class="btn delete" onclick="return confirm('Delete this task?')">Delete</a>
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <h3>Session 13</h3>
+                    <p>Python Basics & Logic</p>
+                    <a href="https://github.com/merjena201022/session-13-homework" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Session 14</h3>
+                    <p>Advanced Git & Functions</p>
+                    <a href="https://github.com/merjena201022/session-14-homework" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Study Planner</h3>
+                    <p>Organizing my tennis and school schedule.</p>
+                    <a href="projects.html">View Details</a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for collaborations or tennis hitting sessions!</p>
+            <a href="mailto:amanmyradovamerjen350@gmail.com" class="email-btn">amanmyradovamerjen350@gmail.com</a>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Merjen. Built with Git Workflow.</p>
+    </footer>
+
 </body>
 </html>
