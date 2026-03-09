@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register - Study Plan</title>
+</head>
+<body>
+    <div class="container" style="max-width: 400px; margin-top: 80px;">
+        <div class="form-card">
+            <header>
+                <h2>🌿 Join Study Plan</h2>
+                <p>Create an account to start tracking</p>
+            </header>
+            <form action="/register" method="POST">
+                <input type="text" name="username" placeholder="Choose a Username" required>
+                <input type="password" name="password" placeholder="Choose a Password" required>
+                <button type="submit" class="main-btn">Create Account</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px;">
+                Already have an account? <a href="/login" style="color: var(--green); font-weight: bold;">Login here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
