@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Task - 2026 Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Create a New Task</h1>
+            <p>Set your goals for Friday, Feb 27, 2026</p>
+        </header>
+
+        <div class="form-card">
+            <form action="/add" method="POST">
+                <label>Task Title</label>
+                <input type="text" name="name" placeholder="What do you need to do?" required>
+                
+                <label>Specific Details</label>
+                <input type="text" name="details" placeholder="Steps, books, or notes...">
+                
+                <div class="row">
+                    <div class="col">
+                        <label>Deadline</label>
+                        <input type="date" name="deadline" value="2026-02-27" required>
+                    </div>
+                    <div class="col">
+                        <label>How Important?</label>
+                        <select name="priority">
+                            <option value="High">🔥 High Priority</option>
+                            <option value="Medium" selected>⚡ Medium Priority</option>
+                            <option value="Low">🍃 Low Priority</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit" class="main-btn">Save to My Planner</button>
+                <a href="/" style="display:block; text-align:center; margin-top:15px; color:#666; text-decoration:none;">Go Back</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
